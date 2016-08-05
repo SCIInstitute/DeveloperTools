@@ -10,9 +10,9 @@ Packages Needed
 Instructions
 ===============
 
-1. After installing the above packages, (ISSI to <code>C:\ISSI</code>), 
+1. After installing the above packages, (ISSI to <code>C:\\ISSI</code>), 
     you need to make 1 change to 1 file to use provided scripts.
-    - Open <code>C:\ISSI\_issi.isi</code>
+    - Open <code>C:\\ISSI\\_issi.isi</code>
     - Go to line 4060
     - Change <code> function InitializeSetup(): Boolean;</code> to 
              <code> function InitializeSetupISSI(): Boolean;<code>.
