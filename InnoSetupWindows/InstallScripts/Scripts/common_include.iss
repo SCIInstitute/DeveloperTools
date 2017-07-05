@@ -67,7 +67,7 @@ Name: "ukrainian"; MessagesFile: "compiler:Languages\Ukrainian.isl"
                
 [Files]               
 ; MSVC 2015 Redistributable
-Source: "C:\Users\Brig\Downloads\Installers\inno_setup_scripts\vcredist_x64.exe"; DestDir: {app}; Flags: deleteafterinstall
+Source: "C:\Users\scirun-tester\Documents\GitHub\DeveloperTools\InnoSetupWindows\InstallScripts\Scripts\vcredist_x64.exe"; DestDir: {app}; Flags: deleteafterinstall
 
 [Run]
 Filename: {app}\vcredist_x64.exe; Check: VCRedistNeedsInstall; Parameters: "/passive"; StatusMsg: Installing VC++ 2015 Redistributable...; Flags: 
