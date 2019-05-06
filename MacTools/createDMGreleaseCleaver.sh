@@ -6,7 +6,7 @@ fi
 rm *.dmg
 app_name=cleaver-gui
 title=Cleaver2
-finalDMGName=Cleaver_2.2_osx.dmg
+finalDMGName=Cleaver_2.3_osx.dmg
 app_dir="$1"
 license="$3"
 image_splash="$4"
