@@ -50,24 +50,20 @@ Name: "de"; MessagesFile: "compiler:Languages\Dutch.isl"
 Name: "finnish"; MessagesFile: "compiler:Languages\Finnish.isl"
 Name: "french"; MessagesFile: "compiler:Languages\French.isl"
 Name: "german"; MessagesFile: "compiler:Languages\German.isl"
-Name: "greek"; MessagesFile: "compiler:Languages\Greek.isl"
 Name: "hebrew"; MessagesFile: "compiler:Languages\Hebrew.isl"
-Name: "hungarian"; MessagesFile: "compiler:Languages\Hungarian.isl"
 Name: "italian"; MessagesFile: "compiler:Languages\Italian.isl"
 Name: "japanese"; MessagesFile: "compiler:Languages\Japanese.isl"
 Name: "norwegian"; MessagesFile: "compiler:Languages\Norwegian.isl"
 Name: "polish"; MessagesFile: "compiler:Languages\Polish.isl"
 Name: "portuguese"; MessagesFile: "compiler:Languages\Portuguese.isl"
 Name: "russian"; MessagesFile: "compiler:Languages\Russian.isl"
-Name: "serbiancyrillic"; MessagesFile: "compiler:Languages\SerbianCyrillic.isl"
-Name: "serbianlatin"; MessagesFile: "compiler:Languages\SerbianLatin.isl"
 Name: "slovenian"; MessagesFile: "compiler:Languages\Slovenian.isl"
 Name: "spanish"; MessagesFile: "compiler:Languages\Spanish.isl"
 Name: "ukrainian"; MessagesFile: "compiler:Languages\Ukrainian.isl"
                
 [Files]               
 ; MSVC 2015 Redistributable
-Source: "C:\Users\scirun-tester\Documents\GitHub\DeveloperTools\InnoSetupWindows\InstallScripts\Scripts\vcredist_x64.exe"; DestDir: {app}; Flags: deleteafterinstall
+Source: "C:\Users\Ally\Documents\GitHub\DeveloperTools\InnoSetupWindows\InstallScripts\Scripts\vcredist_x64.exe"; DestDir: {app}; Flags: deleteafterinstall
 
 [Run]
 Filename: {app}\vcredist_x64.exe; Check: VCRedistNeedsInstall; Parameters: "/passive"; StatusMsg: Installing VC++ 2015 Redistributable...; Flags: 
