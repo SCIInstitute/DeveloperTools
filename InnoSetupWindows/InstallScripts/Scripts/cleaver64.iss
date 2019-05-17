@@ -29,7 +29,8 @@ Source: "C:\Users\Ally\Documents\GitHub\Cleaver2\buildR\bin\Release\cleaver-cli.
 Source: "C:\Users\Ally\Documents\GitHub\Cleaver2\buildR\bin\Release\Qt5Core.dll"; DestDir: "{app}"; Flags: ignoreversion; Permissions: users-modify
 Source: "C:\Users\Ally\Documents\GitHub\Cleaver2\buildR\bin\Release\Qt5Gui.dll"; DestDir: "{app}"; Flags: ignoreversion; Permissions: users-modify
 Source: "C:\Users\Ally\Documents\GitHub\Cleaver2\buildR\bin\Release\Qt5OpenGL.dll"; DestDir: "{app}"; Flags: ignoreversion; Permissions: users-modify
-Source: "C:\Users\Ally\Documents\GitHub\Cleaver2\buildR\bin\Release\Qt5Widgets.dll"; DestDir: "{app}"; Flags: ignoreversion; Permissions: users-modify   
+Source: "C:\Users\Ally\Documents\GitHub\Cleaver2\buildR\bin\Release\Qt5Widgets.dll"; DestDir: "{app}"; Flags: ignoreversion; Permissions: users-modify
+Source: "C:\Users\Ally\Documents\GitHub\Cleaver2\buildR\bin\Release\qwindows.dll"; DestDir: "{app}\platforms"; Flags: ignoreversion; Permissions: users-modify   
 ; Source: "C:\Users\Brig\Documents\Cleaver2\msvc\bin\Release\zlib.dll"; DestDir: "{app}"; Flags: ignoreversion; Permissions: users-modify
 ; platform folder     
 ; Source: "C:\Users\Brig\Documents\Cleaver2\msvc\bin\Release\platforms\*"; DestDir: "{app}\platforms"; Flags: ignoreversion recursesubdirs; 
