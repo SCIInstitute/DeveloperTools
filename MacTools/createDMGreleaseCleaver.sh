@@ -6,7 +6,7 @@ fi
 rm *.dmg
 app_name=cleaver-gui
 title=Cleaver2
-finalDMGName=Cleaver_2.3_osx.dmg
+finalDMGName=Cleaver_2.4_osx.dmg
 app_dir="$1"
 license="$3"
 image_splash="$4"
@@ -65,6 +65,6 @@ sync
 sync
 hdiutil detach ${device}
 hdiutil convert "pack.temp.dmg" -format UDZO -imagekey zlib-level=9 -o "${finalDMGName}"
-rm -f pack.temp.dmg 
+rm -f pack.temp.dmg
 rm -rf "${source}"
 exit 0
