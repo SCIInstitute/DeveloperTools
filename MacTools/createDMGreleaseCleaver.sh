@@ -15,7 +15,7 @@ rm -rf temp
 mkdir temp
 cp -r "${app_dir}/${app_name}.app" "${source}"
 cp "$2" "${source}/${app_name}.app/Contents/MacOS"
-/Users/allywarner/Qt/Qt5.12.0/5.12.0/clang_64/bin/macdeployqt "${source}/${app_name}.app"
+/Users/alexandrawarner/Qt5.9.1/5.9.1/clang_64/bin/macdeployqt "${source}/${app_name}.app"
 ln -s /Applications "${source}"/Applications
 cp "${license}" "${source}/LICENSE.txt"
 size=80000
