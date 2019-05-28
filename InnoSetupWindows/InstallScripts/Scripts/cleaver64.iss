@@ -8,28 +8,29 @@
 #define MyAppURL "http://sci.utah.edu"
 #define MyAppExeName "cleaver-gui.exe"
 #define MyAppID "{E28BFA56-C624-4C20-BDE7-A81A8D55B017}"
-#define ISSI_Splash "C:\Users\scirun-tester\Documents\GitHub\DeveloperTools\InnoSetupWindows\InstallScripts\Images\cleaver_logo_lg.bmp"
+#define ISSI_Splash "C:\Users\Ally\Documents\GitHub\DeveloperTools\InnoSetupWindows\InstallScripts\Images\cleaver_logo_lg.bmp"
 #include "common_include.iss" 
 
 [Setup]
-OutputDir=C:\Users\scirun-tester\Documents\Installers
-OutputBaseFilename=Cleaver_2.3_win64
-SetupIconFile=C:\Users\scirun-tester\Documents\GitHub\DeveloperTools\InnoSetupWindows\InstallScripts\Images\cleaverIcon.ico
-WizardImageFile=C:\Users\scirun-tester\Documents\GitHub\DeveloperTools\InnoSetupWindows\InstallScripts\Images\cleaver_logo_cut.bmp
-WizardSmallImageFile=C:\Users\scirun-tester\Documents\GitHub\DeveloperTools\InnoSetupWindows\InstallScripts\Images\cleaver_logo_square.bmp
+OutputDir=C:\Users\Ally\Documents\GitHub
+OutputBaseFilename=Cleaver_2.4_win64
+SetupIconFile=C:\Users\Ally\Documents\GitHub\DeveloperTools\InnoSetupWindows\InstallScripts\Images\cleaverIcon.ico
+WizardImageFile=C:\Users\Ally\Documents\GitHub\DeveloperTools\InnoSetupWindows\InstallScripts\Images\cleaver_logo_cut.bmp
+WizardSmallImageFile=C:\Users\Ally\Documents\GitHub\DeveloperTools\InnoSetupWindows\InstallScripts\Images\cleaver_logo_square.bmp
 WizardImageBackColor=clWhite
-LicenseFile=C:\Cleaver2\Cleaver2\LICENSE
+LicenseFile=C:\Users\Ally\Documents\GitHub\Cleaver2\LICENSE
 
 [Files]     
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 ; BINARY ITEMS
-Source: "C:\Cleaver2\Cleaver2\build\bin\cleaver-gui.exe"; DestDir: "{app}"; Flags: ignoreversion  
-Source: "C:\Cleaver2\Cleaver2\build\bin\cleaver-cli.exe"; DestDir: "{app}"; Flags: ignoreversion 
+Source: "C:\Users\Ally\Documents\GitHub\Cleaver2\buildR\bin\Release\cleaver-gui.exe"; DestDir: "{app}"; Flags: ignoreversion  
+Source: "C:\Users\Ally\Documents\GitHub\Cleaver2\buildR\bin\Release\cleaver-cli.exe"; DestDir: "{app}"; Flags: ignoreversion 
 ; DLL ITEMS    
-Source: "C:\Cleaver2\Cleaver2\build\bin\Qt5Core.dll"; DestDir: "{app}"; Flags: ignoreversion; Permissions: users-modify
-Source: "C:\Cleaver2\Cleaver2\build\bin\Qt5Gui.dll"; DestDir: "{app}"; Flags: ignoreversion; Permissions: users-modify
-Source: "C:\Cleaver2\Cleaver2\build\bin\Qt5OpenGL.dll"; DestDir: "{app}"; Flags: ignoreversion; Permissions: users-modify
-Source: "C:\Cleaver2\Cleaver2\build\bin\Qt5Widgets.dll"; DestDir: "{app}"; Flags: ignoreversion; Permissions: users-modify   
+Source: "C:\Users\Ally\Documents\GitHub\Cleaver2\buildR\bin\Release\Qt5Core.dll"; DestDir: "{app}"; Flags: ignoreversion; Permissions: users-modify
+Source: "C:\Users\Ally\Documents\GitHub\Cleaver2\buildR\bin\Release\Qt5Gui.dll"; DestDir: "{app}"; Flags: ignoreversion; Permissions: users-modify
+Source: "C:\Users\Ally\Documents\GitHub\Cleaver2\buildR\bin\Release\Qt5OpenGL.dll"; DestDir: "{app}"; Flags: ignoreversion; Permissions: users-modify
+Source: "C:\Users\Ally\Documents\GitHub\Cleaver2\buildR\bin\Release\Qt5Widgets.dll"; DestDir: "{app}"; Flags: ignoreversion; Permissions: users-modify
+Source: "C:\Users\Ally\Documents\GitHub\Cleaver2\buildR\bin\Release\qwindows.dll"; DestDir: "{app}\platforms"; Flags: ignoreversion; Permissions: users-modify   
 ; Source: "C:\Users\Brig\Documents\Cleaver2\msvc\bin\Release\zlib.dll"; DestDir: "{app}"; Flags: ignoreversion; Permissions: users-modify
 ; platform folder     
 ; Source: "C:\Users\Brig\Documents\Cleaver2\msvc\bin\Release\platforms\*"; DestDir: "{app}\platforms"; Flags: ignoreversion recursesubdirs; 
