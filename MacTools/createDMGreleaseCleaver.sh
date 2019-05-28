@@ -15,14 +15,11 @@ rm -rf temp
 mkdir temp
 cp -r "${app_dir}/${app_name}.app" "${source}"
 cp "$2" "${source}/${app_name}.app/Contents/MacOS"
----
-cache_dir=${app_dir}/../
-open "${cache_dir}/CMakeCache.txt"
-find "Qt5Core_DIR"
-bin_path=${Qt5Core_DIR}../../../
+cache_dir=${app_dir}/..
+Qt5Core_DIR=`grep "Qt5Core_DIR:PATH=" "${cache_dir}/CMakeCache.txt" | cut -d "=" -f2`
+echo "${Qt5Core_DIR}"
+bin_path=${Qt5Core_DIR}/../../../
 ${bin_path}/bin/macdeployqt "${source}/${app_name}.app"
----
-/Users/alexandrawarner/Qt5.9.1/5.9.1/clang_64/bin/macdeployqt "${source}/${app_name}.app"
 ln -s /Applications "${source}"/Applications
 cp "${license}" "${source}/LICENSE.txt"
 size=80000
