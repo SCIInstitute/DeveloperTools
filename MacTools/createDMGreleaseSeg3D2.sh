@@ -22,7 +22,7 @@ bin_path=${Qt5Core_DIR}/../../../
 ${bin_path}/bin/macdeployqt "${source}/${app_name}.app"
 ln -s /Applications "${source}"/Applications
 cp "${license}" "${source}/LICENSE.txt"
-size=80000
+size=550000
 hdiutil create -srcfolder "${source}" -volname "${title}" -fs HFS+ \
       -fsargs "-c c=64,a=16,e=16" -format UDRW -size ${size}k pack.temp.dmg
 device=$(hdiutil attach -readwrite -noverify -noautoopen "pack.temp.dmg" | \
