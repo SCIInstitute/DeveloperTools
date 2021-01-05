@@ -1,6 +1,6 @@
 #!/bin/bash
 if [ "$#" -ne 4 ]; then
-  echo "Usage: ./create_dmg APP_DIR CLI_BINARY LICENSE_FILE DMG_LOGO"
+  echo "Usage: ./create_dmg APP_DIR HEADLESS_BINARY LICENSE_FILE DMG_LOGO"
   exit 1
 fi
 rm *.dmg
