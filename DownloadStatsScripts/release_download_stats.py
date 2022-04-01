@@ -23,7 +23,7 @@ parser.add_option("--linux",
 parser.add_option("--osx",
                   dest="osx",action='store_true', default=False,
                   help="find the osx release data")
-parser.add_option("--windows",                                   
+parser.add_option("--windows",
                   dest="win64",action='store_true', default=False,
                   help="find the windows release data")
                   
@@ -33,45 +33,24 @@ parser.add_option("--src",
 parser.add_option("--noexamples",
                   dest="noexamples",action='store_true', default=False,
                   help="Show everything except example data")
-                                    
 parser.add_option('-a',"--all",
                   dest="all",action='store_true', default=False,
                   help="find all release data (default)")
+parser.add_option("--software",dest = "software",
+                  default="cleaver",
+                  help="software to report:  cleaver (default), cleaver2, shapeworks, shapeworksstudio, seg3d, scirun, map3d, uncertainsci, fluorender, imagevis3d")
                   
 (options,args) = parser.parse_args()
 
-print(options)
-all == True
 
-os_version = ['Linux', 'osx', 'src', 'win64']
-version_num = ['v1.1','v1.2','v1.3','v1.4']
-
-
-with urllib.request.urlopen("https://api.github.com/repos/SCIInstitute/shapeworks/releases") as response:
-   html = response.read()
-#data = urllib2.urlopen("https://api.github.com/repos/SCIInstitute/shapeworks/releases")
-#html = data.read()
-listofreleases = json.loads(html)
-
-b = set(os_version)
-c = set(version_num)
-
-#if len(b) == 0:
-#    if len(c) == 0:
-#        for version in version_num:
-#            a = version.split("-")
-#            os.append(a[0])
-#            release_number.append(a[1])
-#            b = set(os)
-#            c = set(release_number)
-#            bool2 = True
-#elif len(c) != 0:
-#    bool2 = False
+                        
+os_version = ['Linux', 'osx', 'src', 'win32']
+version_num = ['v2.0','v2.1b','v2.1']
 
 os_tags = []
 
 if options.osx or options.noexamples:
-    os_tags += ['osx', 'mac', 'dmg', 'pkg']
+    os_tags += ['osx', 'mac', 'dmg', 'pkg', '.app', 'Darwin']
     all = False
 if options.Linux or options.noexamples:
     os_tags += ['linux' ]
@@ -86,37 +65,24 @@ if options.noexamples:
     os_tags += ['bin', 'binaries']
     all = False
 
-    
-#main code body, iterates over the command line inputs
-#for thing in os_version:
-#    #print getattr(options, thing) == True
-#    if getattr(options, thing) == True:
-#        print("\n \n" + thing.upper() + " RELEASES")
-#        for number in listofreleases:
-#            releasename = number.get("name")
-#            listofassets = number.get("assets")
-#            print("\n" + releasename)
-#            print(number.get("created_at") + "\n")
-#            for info in listofassets:
-#                for d in b:
-#                    for e in c:
-#                        if d and e in info.get("name"):
-#                            if thing in info.get("name"):
-#                                print(info.get("name"))
-#                                count = info.get("download_count")
-#                                print("Download Count = " + str(count))
-#                                continue
-#                        else:
-#                            if bool2 == True:
-#                                continue
-#                            else:
-#                                print("No releases here")
-#                                bool = False
-#                                break
-#                    break
-#                if bool == False:
-#                    bool = True
-#                    break
+repo_lookup = {"shapeworks" : "https://api.github.com/repos/SCIInstitute/shapeworks/releases",
+                "shapeworksstudio" : "https://api.github.com/repos/SCIInstitute/shapeworks-studio/releases",
+                "cleaver2" : "https://api.github.com/repos/SCIInstitute/cleaver2/releases",
+                "cleaver" : "https://api.github.com/repos/SCIInstitute/cleaver/releases",
+                "seg3d"  : "https://api.github.com/repos/SCIInstitute/Seg3D/releases",
+                "scirun" : "https://api.github.com/repos/SCIInstitute/SCIRun/releases",
+                "imagevis3d" : "https://api.github.com/repos/SCIInstitute/ImageVis3D/releases",
+                "fluorender" : "https://api.github.com/repos/SCIInstitute/FluoRender/releases",
+                "map3d" : "https://api.github.com/repos/SCIInstitute/map3d/releases",
+                "uncertainsci" : "https://api.github.com/repos/SCIInstitute/UncertainSCI/releases"
+}
+
+
+with urllib.request.urlopen(repo_lookup[options.software]) as response:
+   html = response.read()
+#data = urllib2.urlopen("https://api.github.com/repos/SCIInstitute/PFEIFERen /releases")
+#html = data.read()
+listofreleases = json.loads(html)
 
 print(os_tags)
 
@@ -150,7 +116,7 @@ if options.list == True:
                             
 
 
-#the else case, prints all releases                                 
+#the else case, prints all releases
 if options.all or all:
     print("\n \n" + "ALL RELEASES")
     for number in listofreleases:
@@ -163,3 +129,5 @@ if options.all or all:
             count = info.get("download_count")
             print("Download Count = " + str(count))
  
+
+                            

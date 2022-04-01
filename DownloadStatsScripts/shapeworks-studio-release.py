@@ -1,4 +1,4 @@
-import urllib2
+import urllib.request, urllib.error, urllib.parse
 import json
 import requests
 import sys
@@ -41,7 +41,7 @@ os_version = ['Linux', 'osx', 'src', 'win64']
 version_num = ['v2.0','v2.1b','v2.1']
 
 
-data = urllib2.urlopen("https://api.github.com/repos/SCIInstitute/ShapeWorksStudio/releases")
+data = urllib.request.urlopen("https://api.github.com/repos/SCIInstitute/ShapeWorksStudio/releases")
 html = data.read()
 listofreleases = json.loads(html)
 
@@ -68,26 +68,26 @@ bool = True
 for thing in os_version:
     #print getattr(options, thing) == True
     if getattr(options, thing) == True:
-        print "\n \n" + thing.upper() + ' RELEASES'
+        print("\n \n" + thing.upper() + ' RELEASES')
         for number in listofreleases:
             releasename = number.get("name")                
             listofassets = number.get("assets")
-            print "\n" + releasename
-            print number.get("created_at") + "\n"
+            print("\n" + releasename)
+            print(number.get("created_at") + "\n")
             for info in listofassets:
                 for d in b:
                     for e in c:
                         if d and e in info.get("name"):
                             if thing in info.get("name"):
-                                print info.get("name")
+                                print(info.get("name"))
                                 count = info.get("download_count")
-                                print "Download Count = " + str(count)
+                                print("Download Count = " + str(count))
                                 continue
                         else:
                             if bool2 == True:
                                 continue
                             else:
-                                print "No releases here"
+                                print("No releases here")
                                 bool = False
                                 break        
                     break
@@ -102,21 +102,21 @@ for thing in os_version:
             
 #the else case, prints all releases                                 
 if options.all == True:
-    print "\n \n" + "ALL RELEASES"
+    print("\n \n" + "ALL RELEASES")
     for number in listofreleases:
         releasename = number.get("name")
-        print "\n" + releasename
+        print("\n" + releasename)
         listofassets = number.get("assets")
-        print number.get("created_at") + "\n"
+        print(number.get("created_at") + "\n")
         for info in listofassets:
-            print info.get("name")
+            print(info.get("name"))
             count = info.get("download_count")
-            print "Download Count = " + str(count)
+            print("Download Count = " + str(count))
  
 #lists releases available 
 if options.list == True:
-    print "\n" + "RELEASES LIST"
+    print("\n" + "RELEASES LIST")
     for number in listofreleases:            
         releasename = number.get("name")  
-        print "\n" + releasename
+        print("\n" + releasename)
                             
