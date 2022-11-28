@@ -69,6 +69,7 @@ repo_lookup = {"shapeworks" : "https://api.github.com/repos/SCIInstitute/shapewo
                 "shapeworksstudio" : "https://api.github.com/repos/SCIInstitute/shapeworks-studio/releases",
                 "cleaver2" : "https://api.github.com/repos/SCIInstitute/cleaver2/releases",
                 "cleaver" : "https://api.github.com/repos/SCIInstitute/cleaver/releases",
+                "itkcleaver" : "https://api.github.com/repos/SCIInstitute/ITKCleaver/releases",
                 "seg3d"  : "https://api.github.com/repos/SCIInstitute/Seg3D/releases",
                 "scirun" : "https://api.github.com/repos/SCIInstitute/SCIRun/releases",
                 "imagevis3d" : "https://api.github.com/repos/SCIInstitute/ImageVis3D/releases",
