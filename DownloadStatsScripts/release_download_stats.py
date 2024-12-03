@@ -2,12 +2,15 @@ import urllib
 import urllib.request, urllib.error, urllib.parse
 import json
 import requests
+import ssl
 import sys
 from optparse import OptionParser
 #from pprint import pprint
 import codecs
 codecs.register(lambda name: codecs.lookup('utf-8') if name == 'cp65001' else None)
 """was using this to see what I had currently, could be useful later"""
+
+ssl._create_default_https_context = ssl._create_unverified_context
 
 parser = OptionParser()
 
@@ -66,7 +69,7 @@ if options.noexamples:
     all = False
 
 repo_lookup = {"shapeworks" : "https://api.github.com/repos/SCIInstitute/shapeworks/releases",
-                "shapeworksstudio" : "https://api.github.com/repos/SCIInstitute/shapeworks-studio/releases",
+                "shapeworksstudio" : "https://api.github.com/repos/SCIInstitute/shapeworksstudio/releases",
                 "cleaver2" : "https://api.github.com/repos/SCIInstitute/cleaver2/releases",
                 "cleaver" : "https://api.github.com/repos/SCIInstitute/cleaver/releases",
                 "itkcleaver" : "https://api.github.com/repos/SCIInstitute/ITKCleaver/releases",
